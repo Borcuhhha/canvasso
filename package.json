@@ -1,0 +1,21 @@
+{
+  "name": "canvasso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borcuhhha/canvasso.git"
+  },
+  "keywords": [
+    "canvas",
+    "draw",
+    "image"
+  ],
+  "author": "Satuev Islam <satuevsky@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Borcuhhha/canvasso/issues"
+  },
+  "homepage": "https://github.com/Borcuhhha/canvasso#readme"
+}
