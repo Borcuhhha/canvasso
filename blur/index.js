@@ -1,8 +1,3 @@
-/**
- * Created by Islam on 04.12.2016.
- */
-
-
 module.exports = function blur(canvas, radius, x, y, h, w){
 	stackBlurCanvasRGB(canvas, x || 0, y || 0, w || canvas.width, h || canvas.height, radius);
 };

@@ -1,7 +1,3 @@
-/**
- * Created by Islam on 04.12.2016.
- */
-
 module.exports = function drawImage(canvas, img, params){
 	params = params || {};
 	var lw = params.lineWidth,

@@ -1,7 +1,3 @@
-/**
- * Created by Islam on 04.12.2016.
- */
-
 module.exports = function drawText(canvas, text, x, y, params){
 	params = params || {};
 	var ctx = canvas.getContext('2d');
