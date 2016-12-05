@@ -3,8 +3,8 @@ module.exports = function drawImage(canvas, img, params){
 	var lw = params.lineWidth,
 		x = params.x || 0,
 		y = params.y || 0,
-		w = params.w || image.naturalWidth,
-		h = params.h || image.naturalHeight,
+		w = params.w || img.naturalWidth,
+		h = params.h || img.naturalHeight,
 		ctx = canvas.getContext('2d');
 
 	ctx.save();
@@ -34,7 +34,7 @@ module.exports = function drawImage(canvas, img, params){
 	}
 	ctx.globalAlpha = params.alpha || 1;
 	ctx.shadowBlur = 0;
-	ctx.drawImage(image,x,y,w,h);
+	ctx.drawImage(img,x,y,w,h);
 	if(lw){
 		if(!params.rounded){
 			ctx.strokeRect(x, y, w, h);
