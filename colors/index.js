@@ -6,7 +6,7 @@ module.exports = {
 	getAvgColor: function(canvas){
 		var ctx = canvas.getContext('2d');
 		if(!ctx.getImageData) return null;
-		var data = ctx.getImageData(0, 0, canvas.width, canvas.height),
+		var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data,
 			r = 0, g = 0, b = 0, a = 0, n = 0;
 		for(var i = 0; i < data.length - 3; i+=4){
 			n++;
