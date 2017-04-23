@@ -1,15 +1,17 @@
-var blur = require('./lib/blur');
-var drawText = require('./lib/drawText');
-var drawRect = require('./lib/drawRect');
-var drawImage = require('./lib/drawImage');
-var crossDomainImage = require('./lib/crossDomainImage');
-var colors = require('./lib/colors');
+var blur = require('./lib/blur'),
+	drawText = require('./lib/drawText'),
+	drawRect = require('./lib/drawRect'),
+	drawImage = require('./lib/drawImage'),
+	vinget = require('./lib/vinget'),
+	crossDomainImage = require('./lib/crossDomainImage'),
+	colors = require('./lib/colors');
 
 module.exports = {
 	blur: blur,
 	drawText: drawText,
 	drawRect: drawRect,
 	drawImage: drawImage,
+	vinget: vinget,
 	crossDomainImage: crossDomainImage,
 	getAvgColor: colors.getAvgColor,
 
