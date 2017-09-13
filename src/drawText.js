@@ -1,9 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = drawText;
 /**
  * Draw text to canvas
  * @param {HTMLCanvasElement} canvas
@@ -27,39 +21,39 @@ exports.default = drawText;
  * @returns {{width: Number, fontSize: (number|*)}}
  */
 
-function drawText(canvas, text, x, y) {
-	var params = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
 
-	var ctx = canvas.getContext('2d');
+export default function drawText(canvas, text, x, y, params = {}){
+	let ctx = canvas.getContext('2d');
 	ctx.save();
 
 	ctx.fillStyle = params.color || 'white';
-	ctx.shadowBlur = params.shadowBlur === 0 ? 0 : params.shadowBlur || 5;
+	ctx.shadowBlur = params.shadowBlur === 0 ? 0 : (params.shadowBlur || 5);
 	ctx.shadowColor = params.shadowColor || 'black';
 	ctx.globalAlpha = params.alpha || 1;
 	params.size = params.size || 15;
 
-	do {
+	do{
 		ctx.font = (params.italic ? 'italic ' : '') + (params.bold ? 'bold ' : '') + params.size + 'px ' + (params.fontFamily || 'Ubuntu, sans-serif');
 		params.size -= 1;
-	} while (params.size > 1 && params.maxWidth && ctx.measureText(text).width > params.maxWidth);
+	}while(params.size > 1 && params.maxWidth && ctx.measureText(text).width > params.maxWidth);
 	params.size++;
 
-	var w = ctx.measureText(text).width;
+	let w = ctx.measureText(text).width;
 
-	if (params.centered) {
-		x = x - w / 2;
+	if(params.centered){
+		x = x - w/2;
 	}
-	if (params.halign === 'right') {
+	if(params.halign === 'right'){
 		x = canvas.width - w - x;
 	}
-	if (params.valign === 'bottom') {
+	if(params.valign === 'bottom'){
 		y = canvas.height - y;
 	}
 
-	if (!params.onlyMeasure) ctx.fillText(text, x, y);
+	if(!params.onlyMeasure)
+		ctx.fillText(text, x, y);
 
-	var textParams = {
+	let textParams = {
 		width: ctx.measureText(text).width,
 		fontSize: params.size
 	};
